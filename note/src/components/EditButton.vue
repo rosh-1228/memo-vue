@@ -20,7 +20,7 @@ export default {
     }
   },
   props: {
-    note: String
+    note: Object
   }
 }
 </script>
