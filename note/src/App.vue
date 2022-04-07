@@ -4,6 +4,7 @@
       <li
         v-for="note in notes"
         :key="note.id"
+        class="note-list"
       >
         <router-link
           @click="passNote (note)"
@@ -34,3 +35,9 @@ export default ({
   }
 })
 </script>
+
+<style>
+  .note-list {
+    list-style:none;
+  }
+</style>
