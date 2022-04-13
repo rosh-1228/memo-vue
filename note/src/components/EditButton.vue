@@ -11,7 +11,7 @@
 export default {
   methods: {
     addNote (note) {
-      this.$store.state.note = {}
+      this.$store.state.editingNote = {}
       if (note.doEdit) {
         this.$store.commit('updateNote', note)
       } else {

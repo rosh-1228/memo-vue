@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     notes: JSON.parse(localStorage.getItem(process.env.VUE_APP_STORAGE_KEY)) || [],
-    note: {}
+    editingNote: {}
   },
   mutations: {
     addNote (state, note) {
@@ -26,8 +26,8 @@ export default createStore({
       localStorage.setItem(process.env.VUE_APP_STORAGE_KEY, JSON.stringify(state.notes))
     },
     passNote (state, updateNote) {
-      state.note = updateNote
-      return state.note
+      state.editingNote = updateNote
+      return state.editingNote
     },
     updateNote (state, updateNote) {
       if (updateNote.content === '') { this.deleteNote(state, updateNote) }

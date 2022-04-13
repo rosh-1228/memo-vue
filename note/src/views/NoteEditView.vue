@@ -23,7 +23,7 @@ import DeleteButton from '@/components/DeleteButton.vue'
 export default {
   computed: {
     note: function () {
-      return this.$store.state.note || {}
+      return this.$store.state.editingNote || {}
     }
   },
   components: {
