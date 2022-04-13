@@ -11,7 +11,6 @@
 export default {
   methods: {
     deleteNote (note) {
-      this.$store.state.editingNote = {}
       this.$store.commit('deleteNote', note)
     }
   },

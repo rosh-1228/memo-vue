@@ -7,6 +7,7 @@ export default createStore({
   },
   mutations: {
     addNote (state, note) {
+      state.editingNote = {}
       if (!note.trim()) { return }
       const noteId = state.notes.length ? state.notes.slice(-1)[0].id + 1 : 1
       state.notes.push({
@@ -17,6 +18,7 @@ export default createStore({
       localStorage.setItem(process.env.VUE_APP_STORAGE_KEY, JSON.stringify(state.notes))
     },
     deleteNote (state, deleteNote) {
+      state.editingNote = {}
       const deleteIndex = state.notes.findIndex(note => {
         return note === deleteNote
       })
